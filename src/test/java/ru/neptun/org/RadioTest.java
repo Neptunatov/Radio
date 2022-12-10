@@ -178,4 +178,13 @@ public class RadioTest {
         wave.setCurrentWave(-1);
         Assertions.assertEquals(0, wave.getRadioWave());
     }
+
+    @Test
+    public void notIncreaseBelowTen() {
+        Radio wave = new Radio(10, 0, 10, 0);
+        wave.setMaxWave();
+
+        Assertions.assertEquals(0, wave.increaseWave());
+    }
+
 }

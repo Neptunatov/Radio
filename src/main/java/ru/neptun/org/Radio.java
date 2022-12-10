@@ -98,14 +98,13 @@ public class Radio {
     }
 
     public int decreaseWave() {
+        if (radioWave <= minWave) {
+            radioWave = maxWave;
+            return maxWave;
+        }
         if (radioWave <= maxWave) {
             radioWave = radioWave - 1;
         }
-        if (radioWave < minWave) {
-            radioWave = maxWave;
-        }
         return radioWave;
     }
-
-
 }
