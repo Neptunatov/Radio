@@ -100,9 +100,7 @@ public class Radio {
     public int decreaseWave() {
         if (radioWave <= minWave) {
             radioWave = maxWave;
-            return maxWave;
-        }
-        if (radioWave <= maxWave) {
+        } else {
             radioWave = radioWave - 1;
         }
         return radioWave;
