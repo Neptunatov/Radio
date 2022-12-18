@@ -2,23 +2,31 @@ package ru.neptun.org;
 
 public class Radio {
 
+
     private int maxWave = 10;
     private int minWave = 0;
-    private int radioWave;
+    private int radioWave = minWave;
 
     private int maxVolume = 10;
     private int minVolume = 0;
-    private int currentVolume;
+    private int currentVolume = minVolume;
+    private int numberOfStations;
 
-    public Radio(int maxWave, int minWave, int maxVolume, int minVolume) {
+    public Radio(int maxWave, int minWave, int maxVolume, int minVolume, int numberOfStations) {
 
         this.maxWave = maxWave;
         this.minWave = minWave;
+        this.radioWave = minWave;
 
         this.maxVolume = maxVolume;
         this.minVolume = minVolume;
+        this.currentVolume = minVolume;
+        this.numberOfStations = (maxWave + 1) - minWave;
+    }
 
 
+    public int getStationsTotal() {
+        return numberOfStations;
     }
 
     public int getCurrentVolume() {
@@ -46,20 +54,20 @@ public class Radio {
     }
 
     public int increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
         }
-        if (currentVolume >= 10) {
+        if (currentVolume >= maxVolume) {
             currentVolume = maxVolume;
         }
         return currentVolume;
     }
 
     public int decreaseVolume() {
-        if (currentVolume > 0) {
+        if (currentVolume > minVolume) {
             currentVolume = currentVolume - 1;
         }
-        if (currentVolume <= 0) {
+        if (currentVolume <= minVolume) {
             currentVolume = minVolume;
         }
         return currentVolume;
@@ -90,11 +98,10 @@ public class Radio {
     public int increaseWave() {
         if (radioWave >= maxWave) {
             return minWave;
-        }
-        if (radioWave > minWave) {
+        } else {
             radioWave = radioWave + 1;
+            return radioWave;
         }
-        return radioWave;
     }
 
     public int decreaseWave() {
