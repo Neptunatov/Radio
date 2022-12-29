@@ -3,30 +3,25 @@ package ru.neptun.org;
 public class Radio {
 
 
-    private int maxWave = 10;
-    private int minWave = 0;
-    private int radioWave = minWave;
+    private int radioWave;
+    private int maxWave=9;
+    private final int minWave=0;
+    private int amountRadioWave = 10;
 
-    private int maxVolume = 10;
-    private int minVolume = 0;
-    private int currentVolume = minVolume;
-    private int numberOfStations;
-
-    public Radio(int maxWave, int minWave, int maxVolume, int minVolume, int numberOfStations) {
-
-        this.maxWave = maxWave;
-        this.minWave = minWave;
-        this.radioWave = minWave;
-
-        this.maxVolume = maxVolume;
-        this.minVolume = minVolume;
-        this.currentVolume = minVolume;
-        this.numberOfStations = (maxWave + 1) - minWave;
+    private final int maxVolume=100;
+    private final int minVolume=0;
+    private int currentVolume;
+    
+    public Radio() {
     }
 
+    public Radio(int amountRadioWave){
+        this.amountRadioWave=amountRadioWave;
+        this.maxWave = amountRadioWave - 1;
+    }
 
     public int getStationsTotal() {
-        return numberOfStations;
+        return amountRadioWave;
     }
 
     public int getCurrentVolume() {
