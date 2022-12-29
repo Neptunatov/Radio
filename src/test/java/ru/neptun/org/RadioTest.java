@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
     Radio service = new Radio();
+
     @Test
     public void shouldRadioVolume() {
         service.setCurrentVolume(8);
@@ -176,9 +177,10 @@ public class RadioTest {
         service.setCurrentWave(-1);
         Assertions.assertEquals(0, service.getRadioWave());
     }
+
     @Test
     public void howManiStations() {
-        Radio service= new Radio(10);
+        Radio service = new Radio(10);
 
         Assertions.assertEquals(10, service.getStationsTotal());
     }

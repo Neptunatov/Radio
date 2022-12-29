@@ -4,19 +4,19 @@ public class Radio {
 
 
     private int radioWave;
-    private int maxWave=9;
-    private final int minWave=0;
+    private int maxWave = 9;
+    private final int minWave = 0;
     private int amountRadioWave = 10;
 
-    private final int maxVolume=100;
-    private final int minVolume=0;
+    private final int maxVolume = 100;
+    private final int minVolume = 0;
     private int currentVolume;
-    
+
     public Radio() {
     }
 
-    public Radio(int amountRadioWave){
-        this.amountRadioWave=amountRadioWave;
+    public Radio(int amountRadioWave) {
+        this.amountRadioWave = amountRadioWave;
         this.maxWave = amountRadioWave - 1;
     }
 
